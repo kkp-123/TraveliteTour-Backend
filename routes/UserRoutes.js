@@ -11,14 +11,14 @@ router.post("/register", async (req, res) => {
     const data = req.body;
     // console.log("Received data:", data);
 
-    const findemail = User.findOne({email:data.email})
-    if(findemail)
-    {
-      res.json({
-        message:"This email is all ready register try with other email",
-        success:false
-      })
-    }
+    // const findemail = User.findOne({email:data.email})
+    // if(findemail)
+    // {
+    //   res.json({
+    //     message:"This email is all ready register try with other email",
+    //     success:false
+    //   })
+    // }
 
     const newUser = new User(data);
     const savedUser = await newUser.save(); // save to MongoDB
